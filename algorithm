@@ -1,0 +1,19 @@
+## 冒泡排序
+def bubbleSort(relist):
+    if len(relist) <= 1:
+        return relist
+    len_ = len(relist)
+    for i in range(len_):
+        for j in range(0, len_ - i - 1):
+            if relist[j] > relist[j+1]:
+                relist[j], relist[j+1] = relist[j+1], relist[j]
+    return relist
+
+## 快速排序
+def quickSort(l):
+    if len(l) < 2:
+        return l
+    base = l[0]
+    high = [i for i in l[1:] if i > base]
+    low = [i for i in l[1:] if i < base]
+    return quickSort(low) + [base] + quickSort(high)
